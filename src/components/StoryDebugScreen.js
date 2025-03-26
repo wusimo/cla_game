@@ -254,10 +254,12 @@ const TabContent = styled.div`
   padding: 20px;
 `;
 
+// eslint-disable-next-line no-unused-vars
 const SceneVisualizerContainer = styled.div`
   height: 100%;
 `;
 
+// eslint-disable-next-line no-unused-vars
 const StateDisplay = styled.div`
   height: 100%;
   overflow-y: auto;

@@ -2335,7 +2335,7 @@ export const scenes = {
         text: "End of Episode 1: Silicon Dreams"
       }
     ],
-    defaultNext: "ep2_intro" // This would point to the first scene of Episode 2
+    defaultNext: "coming_soon" // This would point to the first scene of Episode 2
   },
   
   "ep1_ending_compromise_wei": {
@@ -2400,7 +2400,7 @@ export const scenes = {
         text: "End of Episode 1: Silicon Dreams"
       }
     ],
-    defaultNext: "ep2_intro" // This would point to the first scene of Episode 2
+    defaultNext: "coming_soon" // This would point to the first scene of Episode 2
   },
 
   // ... existing code continues ...
@@ -2737,7 +2737,7 @@ export const scenes = {
         text: "End of Episode 1: Silicon Dreams"
       }
     ],
-    defaultNext: "ep2_intro" // This would point to the first scene of Episode 2
+    defaultNext: "coming_soon" // This would point to the first scene of Episode 2
   },
   
   "ep1_ending_failure_kevin": {
@@ -2799,7 +2799,7 @@ export const scenes = {
         text: "End of Episode 1: Silicon Dreams"
       }
     ],
-    defaultNext: "ep2_intro" // This would point to the first scene of Episode 2
+    defaultNext: "coming_soon" // This would point to the first scene of Episode 2
   },
   
   "ep1_ending_partial_kevin": {
@@ -2857,7 +2857,7 @@ export const scenes = {
         text: "End of Episode 1: Silicon Dreams"
       }
     ],
-    defaultNext: "ep2_intro" // This would point to the first scene of Episode 2
+    defaultNext: "coming_soon" // This would point to the first scene of Episode 2
   },
 
   // ... existing code continues ...
@@ -3236,26 +3236,6 @@ export const scenes = {
       }
     ],
     defaultNext: "ep1_demo_day"
-  },
-
-  // Add ep2_intro as a placeholder for future episodes
-  "ep2_intro": {
-    id: "ep2_intro",
-    episodeId: "ep2",
-    title: "To Be Continued...",
-    location: "Coming Soon",
-    background: "/assets/backgrounds/silicon-valley-aerial.jpg",
-    narrative: [
-      {
-        type: "narration",
-        text: "Episode 2 is currently in development. Thank you for playing Episode 1: Silicon Dreams!"
-      },
-      {
-        type: "narration",
-        text: "The story of Nexus AI will continue soon..."
-      }
-    ],
-    defaultNext: "ep1_intro" // Loops back to start for now
   },
 
   "ep1_scene9_breaking_news": {
