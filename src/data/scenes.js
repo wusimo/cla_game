@@ -12,6 +12,74 @@ const getCharacterSpecificScene = (baseId, character) => {
 };
 
 export const scenes = {
+  // Coming Soon scene
+  "coming_soon": {
+    id: "coming_soon",
+    title: "To Be Continued...",
+    location: "Coming Soon",
+    background: "/assets/backgrounds/silicon-valley-aerial.jpg",
+    narrative: [
+      {
+        type: "narration",
+        text: "Episode 1 is complete. Thank you for playing Silicon Dreams!"
+      },
+      {
+        type: "narration",
+        text: "The story of Nexus AI will continue in future episodes..."
+      }
+    ],
+    defaultNext: "ep1_intro" // Loops back to start
+  },
+
+  // Episode 2: The Next Chapter
+  "ep2_intro": {
+    id: "ep2_intro",
+    episodeId: "ep2",
+    title: "To Be Continued...",
+    location: "Coming Soon",
+    background: "/assets/backgrounds/silicon-valley-aerial.jpg",
+    narrative: [
+      {
+        type: "narration",
+        text: "Episode 2 is currently in development. Thank you for playing Episode 1: Silicon Dreams!"
+      },
+      {
+        type: "narration",
+        text: "The story of Nexus AI will continue soon..."
+      }
+    ],
+    defaultNext: "ep1_intro" // Loops back to start for now
+  },
+
+  "ep2_office_growth": {
+    id: "ep2_office_growth",
+    episodeId: "ep2",
+    title: "The Next Chapter",
+    location: "Nexus AI Office",
+    background: "/assets/backgrounds/nexus-office-interior.jpg",
+    narrative: [
+      {
+        type: "narration",
+        text: "The office is bustling with new employees. The Series A funding has allowed for significant growth."
+      },
+      {
+        type: "character",
+        speaker: "Kevin",
+        text: "We've hired some amazing talent. The team is stronger than ever.",
+        emotion: "happy",
+        speakerPosition: "right"
+      },
+      {
+        type: "character",
+        speaker: "Wei",
+        text: "Yes, but we need to make sure we maintain our culture as we grow.",
+        emotion: "thoughtful",
+        speakerPosition: "left"
+      }
+    ],
+    defaultNext: "coming_soon"
+  },
+
   // Episode 1: Silicon Dreams
   "ep1_intro": {
     id: "ep1_intro",
@@ -104,7 +172,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "You're late. Again.",
-        emotion: "annoyed",
+        emotion: "frustrated",
         speakerPosition: "left"
       },
       {
@@ -118,14 +186,14 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "I've been here since 5. We're rewriting the entire recommendation algorithm.",
-        emotion: "tired",
+        emotion: "serious",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "And I've been up since 4 dining with Jackson Wong from Sequoia Capital.",
-        emotion: "proud",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
@@ -136,7 +204,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "Jackson? What did he say?",
-        emotion: "surprised",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
@@ -210,7 +278,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "You're late. Again.",
-        emotion: "annoyed",
+        emotion: "frustrated",
         speakerPosition: "left"
       },
       {
@@ -265,7 +333,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "Let's hear what Jackson had to say. This could be the break we need.",
-        emotion: "interested",
+        emotion: "thoughtful",
         speakerPosition: "left"
       },
       {
@@ -276,7 +344,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Jackson is extremely interested in our technology. Sequoia could lead our Series A.",
-        emotion: "excited",
+        emotion: "happy",
         speakerPosition: "right"
       }
     ],
@@ -294,7 +362,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "I'm concerned about the timeline, Kevin. The recommendation engine isn't ready for a demo yet.",
-        emotion: "concerned",
+        emotion: "serious",
         speakerPosition: "left"
       },
       {
@@ -323,7 +391,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "I'll bring my laptop and keep working while we talk.",
-        emotion: "focused",
+        emotion: "thoughtful",
         speakerPosition: "left"
       },
       {
@@ -334,7 +402,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Fine, but please pay attention when I'm talking about Sequoia's offer.",
-        emotion: "annoyed",
+        emotion: "frustrated",
         speakerPosition: "right"
       }
     ],
@@ -353,21 +421,21 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "It's 8:30, Wei. Normal business hours.",
-        emotion: "defensive",
+        emotion: "frustrated",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "I've been here since 5. We're rewriting the entire recommendation algorithm.",
-        emotion: "annoyed",
+        emotion: "frustrated",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "And I've been up since 4 dining with Jackson Wong from Sequoia Capital.",
-        emotion: "proud",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
@@ -378,7 +446,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "Jackson? What did he say?",
-        emotion: "surprised",
+        emotion: "neutral",
         speakerPosition: "left"
       }
     ],
@@ -396,7 +464,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Sorry I'm late, Wei. I was having breakfast with Jackson Wong from Sequoia Capital. He's extremely interested in our technology.",
-        emotion: "apologetic",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
@@ -407,7 +475,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "Jackson? Really? What did he say?",
-        emotion: "interested",
+        emotion: "thoughtful",
         speakerPosition: "left"
       }
     ],
@@ -436,7 +504,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "Thanks, I needed this. Been here since 5AM rewriting the recommendation algorithm.",
-        emotion: "grateful",
+        emotion: "happy",
         speakerPosition: "left",
         animation: "fadeIn"
       },
@@ -444,7 +512,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "And I've been up since 4 having breakfast with Jackson Wong from Sequoia Capital. He's interested, Wei. Really interested.",
-        emotion: "excited",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
@@ -455,7 +523,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "Jackson Wong? Tell me everything.",
-        emotion: "surprised",
+        emotion: "neutral",
         speakerPosition: "left",
         animation: "bounce"
       }
@@ -475,14 +543,14 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Sequoia is willing to lead our Series A at a $15 million valuation. But they want to see a demo next week.",
-        emotion: "excited",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "Next week? That's ambitious, but I'll make it happen.",
-        emotion: "determined",
+        emotion: "confident",
         speakerPosition: "left"
       },
       {
@@ -536,14 +604,14 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "A week isn't much time to fix our scaling issues...",
-        emotion: "worried",
+        emotion: "serious",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "We need to make it work, Wei. This is our shot.",
-        emotion: "insistent",
+        emotion: "neutral",
         speakerPosition: "right"
       }
     ],
@@ -589,14 +657,14 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Sequoia is willing to lead our Series A at a $15 million valuation. But they want to see a demo next week.",
-        emotion: "excited",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "Next week? That's going to be tight with all the technical issues we need to fix.",
-        emotion: "distracted",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
@@ -607,7 +675,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Wei, are you even listening? This is a $15 million deal we're talking about.",
-        emotion: "annoyed",
+        emotion: "frustrated",
         speakerPosition: "right",
         sceneEffect: "shake"
       }
@@ -673,7 +741,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "A week? That's not enough time to solve our scaling issues.",
-        emotion: "concerned",
+        emotion: "serious",
         speakerPosition: "left"
       }
     ],
@@ -719,7 +787,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Let's talk in the conference room. This is big news.",
-        emotion: "excited",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
@@ -730,14 +798,14 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Sequoia is offering us $15 million at a $75 million valuation. But they need a demo in a week.",
-        emotion: "proud",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "A week? That's not much time...",
-        emotion: "concerned",
+        emotion: "serious",
         speakerPosition: "left"
       },
       {
@@ -791,7 +859,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Let's discuss it in detail. This could be our big break.",
-        emotion: "excited",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
@@ -802,7 +870,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Jackson loved our vision. He's offering $15 million for a 15% stake - a $100 million valuation!",
-        emotion: "proud",
+        emotion: "happy",
         speakerPosition: "right",
         animation: "bounce"
       },
@@ -810,7 +878,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "That's incredible! What's the timeline?",
-        emotion: "excited",
+        emotion: "happy",
         speakerPosition: "left"
       },
       {
@@ -824,7 +892,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "A week? Well, I guess we better get to work then!",
-        emotion: "determined",
+        emotion: "confident",
         speakerPosition: "left"
       }
     ],
@@ -871,21 +939,21 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "I'm going to focus on making sure the algorithm actually works. The scaling issues need to be fixed.",
-        emotion: "determined",
+        emotion: "confident",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "Just make sure it looks good enough for the demo. The investors won't understand the technical details anyway.",
-        emotion: "concerned",
+        emotion: "serious",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "I won't present something that doesn't work properly. That's not how I operate.",
-        emotion: "principled",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
@@ -907,7 +975,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "I'll focus on making the demo look polished. We can fix the underlying issues later.",
-        emotion: "pragmatic",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
@@ -926,7 +994,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "This is looking fantastic. Jackson is going to love it.",
-        emotion: "impressed",
+        emotion: "happy",
         speakerPosition: "right"
       }
     ],
@@ -944,14 +1012,14 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "I'll try to balance the technical improvements with presentation quality. We need both.",
-        emotion: "focused",
+        emotion: "thoughtful",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "Good thinking. We need something that works AND impresses them visually.",
-        emotion: "approving",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
@@ -962,7 +1030,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "It's not perfect, but it shows what we're capable of. Real results with a polished presentation.",
-        emotion: "satisfied",
+        emotion: "happy",
         speakerPosition: "left"
       }
     ],
@@ -981,7 +1049,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "Kevin, can you ask for more time? Two weeks would make a huge difference in quality.",
-        emotion: "concerned",
+        emotion: "serious",
         speakerPosition: "left"
       },
       {
@@ -999,7 +1067,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "They said they need to decide within their current investment cycle. It's one week or nothing.",
-        emotion: "disappointed",
+        emotion: "frustrated",
         speakerPosition: "right"
       }
     ],
@@ -1017,14 +1085,14 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "I'll make it work. We'll need the whole team on this, and I'll be coding around the clock.",
-        emotion: "determined",
+        emotion: "confident",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "That's the spirit! I knew I could count on you, Wei.",
-        emotion: "pleased",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
@@ -1035,7 +1103,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "It's not my best work, but it should scale to handle the demo at least.",
-        emotion: "exhausted",
+        emotion: "serious",
         speakerPosition: "left"
       }
     ],
@@ -1053,14 +1121,14 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "What if we fake some of the features for the demo? Just hard-code the responses for the demonstration scenarios.",
-        emotion: "scheming",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "I like how you think! A 'smoke and mirrors' approach. As long as we can build it for real after we get the funding.",
-        emotion: "approving",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
@@ -1071,7 +1139,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "It works beautifully... as long as they stick to our script.",
-        emotion: "nervous",
+        emotion: "serious",
         speakerPosition: "left"
       }
     ],
@@ -1094,14 +1162,14 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Jackson will be here any minute. How are you feeling about the demo?",
-        emotion: "nervous",
+        emotion: "serious",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "As ready as we'll ever be. I've run through it a dozen times this morning.",
-        emotion: "focused",
+        emotion: "thoughtful",
         speakerPosition: "left"
       },
       {
@@ -1162,21 +1230,21 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "They'll be here any minute. Did you double-check the prepared scenarios?",
-        emotion: "anxious",
+        emotion: "serious",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "Yes, everything's set. Just make sure they follow our demo script. If they go off-script...",
-        emotion: "nervous",
+        emotion: "serious",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "I'll guide the conversation. Don't worry.",
-        emotion: "reassuring",
+        emotion: "thoughtful",
         speakerPosition: "right"
       },
       {
@@ -1187,7 +1255,7 @@ export const scenes = {
         type: "character",
         speaker: "Jackson",
         text: "Kevin, Wei, let's see what you've built that's got everyone talking.",
-        emotion: "curious",
+        emotion: "thoughtful",
         speakerPosition: "center"
       }
     ],
@@ -1253,14 +1321,14 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "That's going to be tight with our current issues. But I'll make it work.",
-        emotion: "determined",
+        emotion: "confident",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "Great! Let's map out a plan.",
-        emotion: "pleased",
+        emotion: "happy",
         speakerPosition: "right"
       }
     ],
@@ -1279,7 +1347,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "Fine. One week it is.",
-        emotion: "resigned",
+        emotion: "frustrated",
         speakerPosition: "left"
       },
       {
@@ -1290,14 +1358,14 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "We'll need the entire team working overtime. I'm not sure we'll solve all the scaling issues, but we can at least make it demo-worthy.",
-        emotion: "stressed",
+        emotion: "serious",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "That's all we need right now. Once we have the funding, we can fix everything else.",
-        emotion: "optimistic",
+        emotion: "happy",
         speakerPosition: "right"
       }
     ],
@@ -1315,7 +1383,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "I'm listening. I can code and talk at the same time.",
-        emotion: "distracted",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
@@ -1326,7 +1394,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Damn it, Wei! This is our future we're talking about! $15 million! Can you put that thing away for five minutes?",
-        emotion: "angry",
+        emotion: "frustrated",
         speakerPosition: "right",
         sceneEffect: "shake"
       },
@@ -1338,7 +1406,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "...fine.",
-        emotion: "shocked",
+        emotion: "neutral",
         speakerPosition: "left"
       }
     ],
@@ -1374,14 +1442,14 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "I have some ideas for temporary fixes that will work for the demo. But we'll need to completely rebuild this section after funding.",
-        emotion: "professional",
+        emotion: "confident",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "That's fine. Let's make a plan.",
-        emotion: "relieved",
+        emotion: "neutral",
         speakerPosition: "right"
       }
     ],
@@ -1400,7 +1468,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Look, I don't care what it takes. Pull all-nighters, bring in freelancers, whatever. This has to work by next week.",
-        emotion: "demanding",
+        emotion: "frustrated",
         speakerPosition: "right"
       },
       {
@@ -1411,7 +1479,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "You can't just demand the impossible, Kevin. Software development doesn't work that way.",
-        emotion: "irritated",
+        emotion: "frustrated",
         speakerPosition: "left"
       },
       {
@@ -1425,7 +1493,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "Fine. But don't come crying to me when technical debt crushes us later.",
-        emotion: "resigned",
+        emotion: "frustrated",
         speakerPosition: "left"
       }
     ],
@@ -1454,21 +1522,21 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "That's... actually reasonable. We could limit the scope to just the core recommendation engine.",
-        emotion: "considering",
+        emotion: "thoughtful",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "Exactly. Show the quality of what we can do, not the quantity. What features do you need to focus on?",
-        emotion: "encouraging",
+        emotion: "confident",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "Let me sketch out a plan. I think we can make this work.",
-        emotion: "engaged",
+        emotion: "thoughtful",
         speakerPosition: "left"
       }
     ],
@@ -1486,7 +1554,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Let me help with the technical issues. I may not code as well as you, but I still remember enough from my engineering days.",
-        emotion: "supportive",
+        emotion: "confident",
         speakerPosition: "right"
       },
       {
@@ -1497,21 +1565,21 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "You'd do that? I thought you'd be focused on preparing the pitch and slide deck.",
-        emotion: "surprised",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "I can do both. The tech needs to work, and I haven't forgotten my roots. What if I help with optimizing the front-end while you focus on the algorithm?",
-        emotion: "determined",
+        emotion: "confident",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "That... would actually help a lot. Let's do it.",
-        emotion: "grateful",
+        emotion: "happy",
         speakerPosition: "left"
       }
     ],
@@ -1530,7 +1598,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Let's get the whole team involved. Everyone drops what they're doing and focuses on making this demo shine.",
-        emotion: "energetic",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
@@ -1541,7 +1609,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Team, we have huge news. Sequoia Capital is ready to lead our Series A with $15 million, but we need an amazing demo in one week.",
-        emotion: "excited",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
@@ -1552,7 +1620,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "Here's the plan. We're forming three task forces: algorithm optimization, UI polish, and testing. Everyone will be assigned to one.",
-        emotion: "commanding",
+        emotion: "confident",
         speakerPosition: "left"
       }
     ],
@@ -1570,21 +1638,21 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "We need to cut some corners to meet this deadline. Let's focus on what will impress Jackson and worry about the rest later.",
-        emotion: "pragmatic",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "What kind of corners are we talking about?",
-        emotion: "cautious",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "Hard-code some responses for the demo scenarios. Skip the scalability fixes for now. Make the UI look polished even if the backend isn't fully optimized.",
-        emotion: "calculating",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
@@ -1595,7 +1663,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "I don't love it, but I get it. Just remember we'll need to fix all of this after we get the funding.",
-        emotion: "reluctant",
+        emotion: "neutral",
         speakerPosition: "left"
       }
     ],
@@ -1628,21 +1696,21 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Jackson says their investment committee meets next Friday. If we want to be considered in this round, it has to be next week.",
-        emotion: "disappointed",
+        emotion: "frustrated",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "So we're back to the original timeline.",
-        emotion: "resigned",
+        emotion: "frustrated",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "But he did say they're very excited about our technology. The potential is there for a much larger round if we impress them.",
-        emotion: "optimistic",
+        emotion: "happy",
         speakerPosition: "right"
       }
     ],
@@ -1660,21 +1728,21 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Let's tackle this together. I'll cancel my other meetings this week and work side by side with you on the demo.",
-        emotion: "committed",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "Really? That would make a huge difference. What about your investor meetings?",
-        emotion: "surprised",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "They can wait. This is our top priority. You focus on the algorithm, I'll handle the presentation layer and coordinate with the design team.",
-        emotion: "focused",
+        emotion: "thoughtful",
         speakerPosition: "right"
       },
       {
@@ -1685,7 +1753,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "Like old times, huh? Let's get to work.",
-        emotion: "energized",
+        emotion: "neutral",
         speakerPosition: "left",
         animation: "bounce"
       }
@@ -1704,14 +1772,14 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Wei, I need you to lead the technical effort for the demo. I'll focus on preparing for the investor pitch and handling logistics.",
-        emotion: "professional",
+        emotion: "confident",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "So business as usual? You handle the money people, I handle the actual product?",
-        emotion: "unsurprised",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
@@ -1736,7 +1804,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Done. They're all yours. Just make it impressive.",
-        emotion: "agreeable",
+        emotion: "neutral",
         speakerPosition: "right"
       }
     ],
@@ -1754,21 +1822,21 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "What if we bring in some outside help? I know a few freelance developers who could assist with the frontend polish.",
-        emotion: "suggesting",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "Outside developers? On our proprietary AI algorithm? That seems risky.",
-        emotion: "concerned",
+        emotion: "serious",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "Not on the core algorithm. Just the UI layer and maybe some of the API integration. Give them the non-sensitive tasks.",
-        emotion: "reassuring",
+        emotion: "thoughtful",
         speakerPosition: "right"
       },
       {
@@ -1779,14 +1847,14 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "Alright, but with strict NDAs and limited access. And I review all their code before it goes into production.",
-        emotion: "cautious",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "Perfect. I'll make some calls right away.",
-        emotion: "pleased",
+        emotion: "happy",
         speakerPosition: "right"
       }
     ],
@@ -1809,7 +1877,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "If we focus on these three key features and make them flawless, Jackson will be impressed.",
-        emotion: "strategic",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
@@ -1834,7 +1902,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "Let's get to work then. We've got a lot to do and not much time.",
-        emotion: "determined",
+        emotion: "confident",
         speakerPosition: "left"
       }
     ],
@@ -1856,14 +1924,14 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Here's what we need for the demo. Can you confirm these features will be ready?",
-        emotion: "cold",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "Yes. I'll handle the technical implementation. You focus on the presentation.",
-        emotion: "detached",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
@@ -1874,14 +1942,14 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "I'll brief the team tomorrow. Let's reconvene in two days to check progress.",
-        emotion: "businesslike",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "Fine. I'll send daily updates by email.",
-        emotion: "distant",
+        emotion: "neutral",
         speakerPosition: "left"
       }
     ],
@@ -1900,7 +1968,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "Before we show you the demo, I'd like to explain the technical architecture of our system.",
-        emotion: "professional",
+        emotion: "confident",
         speakerPosition: "left"
       },
       {
@@ -1911,7 +1979,7 @@ export const scenes = {
         type: "character",
         speaker: "Jackson",
         text: "That's... very interesting. But what does your product actually do for users?",
-        emotion: "confused",
+        emotion: "neutral",
         speakerPosition: "center"
       },
       {
@@ -1922,7 +1990,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Perhaps it's better if we show the demo first, then we can dive into the technical details after.",
-        emotion: "nervous",
+        emotion: "serious",
         speakerPosition: "right"
       }
     ],
@@ -1940,7 +2008,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "We believe AI shouldn't just be a tool, but a companion that understands you.",
-        emotion: "passionate",
+        emotion: "confident",
         speakerPosition: "left"
       },
       {
@@ -1958,7 +2026,7 @@ export const scenes = {
         type: "character",
         speaker: "Jackson",
         text: "That's exactly what we're looking for - technology with both heart and brains. Show me how it works.",
-        emotion: "impressed",
+        emotion: "happy",
         speakerPosition: "center"
       }
     ],
@@ -1976,7 +2044,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "Let me show you what we've built.",
-        emotion: "focused",
+        emotion: "thoughtful",
         speakerPosition: "left"
       },
       {
@@ -2013,7 +2081,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "Let me show you what it means for users. Our prototype can already demonstrate personalized content in real-time.",
-        emotion: "adaptable",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
@@ -2039,7 +2107,7 @@ export const scenes = {
         type: "character",
         speaker: "Jackson",
         text: "This is impressive. The user experience is intuitive, but I can see the sophisticated technology behind it.",
-        emotion: "impressed",
+        emotion: "happy",
         speakerPosition: "center"
       },
       {
@@ -2068,7 +2136,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "Unlike existing systems, our algorithm learns from subtle behavioral patterns to create truly personalized experiences.",
-        emotion: "passionate",
+        emotion: "confident",
         speakerPosition: "left"
       },
       {
@@ -2079,7 +2147,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "What Wei means is that we're reinventing how AI understands user intent - it's more intuitive and human-like.",
-        emotion: "smooth",
+        emotion: "neutral",
         speakerPosition: "right"
       }
     ],
@@ -2108,7 +2176,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "We understand those concerns. That's exactly what the Series A funding would help us address.",
-        emotion: "persuasive",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
@@ -2134,7 +2202,7 @@ export const scenes = {
         type: "character",
         speaker: "Jackson",
         text: "I've seen enough. We want to lead your Series A.",
-        emotion: "decided",
+        emotion: "neutral",
         speakerPosition: "center"
       },
       {
@@ -2145,14 +2213,14 @@ export const scenes = {
         type: "character",
         speaker: "Jackson",
         text: "Let's move forward with the $15 million at the valuation we discussed. Our team will work on the term sheet immediately.",
-        emotion: "pleased",
+        emotion: "happy",
         speakerPosition: "center"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "That's fantastic news! Thank you for your confidence in us.",
-        emotion: "thrilled",
+        emotion: "neutral",
         speakerPosition: "right",
         animation: "bounce"
       },
@@ -2160,7 +2228,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "We won't let you down. This investment will help us revolutionize AI personalization.",
-        emotion: "grateful",
+        emotion: "happy",
         speakerPosition: "left"
       }
     ],
@@ -2193,21 +2261,21 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "They're not ready to lead our Series A... yet. But they're interested in participating in a smaller seed extension round.",
-        emotion: "mixed",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "What does that mean for us financially?",
-        emotion: "concerned",
+        emotion: "serious",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "$5 million instead of $15 million, and at a lower valuation. But it keeps us alive, and gives us another shot at a Series A in 6-12 months.",
-        emotion: "pragmatic",
+        emotion: "neutral",
         speakerPosition: "right"
       }
     ],
@@ -2230,7 +2298,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "To Nexus AI and our Series A funding! $15 million to build the future!",
-        emotion: "celebratory",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
@@ -2241,7 +2309,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "We did it. But this is just the beginning. Now the real work starts.",
-        emotion: "determined",
+        emotion: "confident",
         speakerPosition: "left"
       },
       {
@@ -2259,7 +2327,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "We have the resources now. Time to build something that will change the world.",
-        emotion: "resolute",
+        emotion: "confident",
         speakerPosition: "left"
       },
       {
@@ -2292,14 +2360,14 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "I know it's not what we hoped for, but it's not a rejection either. It's a challenge.",
-        emotion: "resilient",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "We need to focus on fixing the scaling issues. That's what will convince them next time.",
-        emotion: "determined",
+        emotion: "confident",
         speakerPosition: "left"
       },
       {
@@ -2317,14 +2385,14 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "I'm going to rewrite the core engine. By the time we go for Series A, it'll be bulletproof.",
-        emotion: "resolute",
+        emotion: "confident",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "That's the spirit. This isn't the end, it's just the beginning of chapter two.",
-        emotion: "encouraging",
+        emotion: "confident",
         speakerPosition: "right"
       },
       {
@@ -2353,7 +2421,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "And as you can see, our AI adapts instantly to the user's preferences, creating a seamless experience.",
-        emotion: "smooth",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
@@ -2364,7 +2432,7 @@ export const scenes = {
         type: "character",
         speaker: "Jackson",
         text: "Very impressive. The response time is remarkable.",
-        emotion: "impressed",
+        emotion: "happy",
         speakerPosition: "center"
       },
       {
@@ -2390,7 +2458,7 @@ export const scenes = {
         type: "character",
         speaker: "Jackson",
         text: "What happens if we try it with a completely different type of content? Say, scientific papers instead of news?",
-        emotion: "curious",
+        emotion: "thoughtful",
         speakerPosition: "center"
       },
       {
@@ -2401,14 +2469,14 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Well, we could certainly... Wei, would you like to show that feature?",
-        emotion: "nervous",
+        emotion: "serious",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "I... that module isn't implemented in this build.",
-        emotion: "uncomfortable",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
@@ -2419,7 +2487,7 @@ export const scenes = {
         type: "character",
         speaker: "Jackson",
         text: "I see. So this is more of a concept demo than a working product.",
-        emotion: "disappointed",
+        emotion: "frustrated",
         speakerPosition: "center",
         sceneEffect: "fadeToBlack"
       }
@@ -2442,7 +2510,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Before we continue, I want to be transparent. What you're seeing is a prototype with some pre-programmed responses for demonstration purposes.",
-        emotion: "honest",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
@@ -2460,7 +2528,7 @@ export const scenes = {
         type: "character",
         speaker: "Jackson",
         text: "I appreciate your honesty, Kevin. Many founders try to fake it till they make it.",
-        emotion: "respectful",
+        emotion: "neutral",
         speakerPosition: "center"
       },
       {
@@ -2483,7 +2551,7 @@ export const scenes = {
         type: "character",
         speaker: "Jackson",
         text: "This is exactly the kind of innovation we're looking to fund. The user experience is seamless.",
-        emotion: "impressed",
+        emotion: "happy",
         speakerPosition: "center"
       },
       {
@@ -2494,14 +2562,14 @@ export const scenes = {
         type: "character",
         speaker: "Jackson",
         text: "We're prepared to offer the full $15 million at the valuation we discussed. I believe Nexus AI has tremendous potential.",
-        emotion: "decided",
+        emotion: "neutral",
         speakerPosition: "center"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "That's fantastic news! Thank you for your confidence in our vision.",
-        emotion: "thrilled",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
@@ -2512,7 +2580,7 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "We did it. But now we have three months to make everything we just showed actually work.",
-        emotion: "concerned",
+        emotion: "serious",
         speakerPosition: "left"
       }
     ],
@@ -2530,7 +2598,7 @@ export const scenes = {
         type: "character",
         speaker: "Jackson",
         text: "I think we've seen enough for today.",
-        emotion: "disappointed",
+        emotion: "frustrated",
         speakerPosition: "center"
       },
       {
@@ -2541,21 +2609,21 @@ export const scenes = {
         type: "character",
         speaker: "Jackson",
         text: "Kevin, Wei, I appreciate your time, but I don't think this is the right investment for Sequoia at this stage.",
-        emotion: "professional",
+        emotion: "confident",
         speakerPosition: "center"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "Jackson, please. We just need a little more time to fully implement—",
-        emotion: "desperate",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Jackson",
         text: "I'd suggest getting the core technology working before your next investor pitch. Good luck with your venture.",
-        emotion: "firm",
+        emotion: "neutral",
         speakerPosition: "center"
       },
       {
@@ -2577,7 +2645,7 @@ export const scenes = {
         type: "character",
         speaker: "Jackson",
         text: "Your honesty is refreshing, Kevin. Most founders oversell and underdeliver.",
-        emotion: "impressed",
+        emotion: "happy",
         speakerPosition: "center"
       },
       {
@@ -2588,28 +2656,28 @@ export const scenes = {
         type: "character",
         speaker: "Jackson",
         text: "Here's what I'm thinking. We'll do a smaller round now - $7 million to get you to a working product. Then we'll reassess for the full Series A.",
-        emotion: "businesslike",
+        emotion: "neutral",
         speakerPosition: "center"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "That sounds fair. We can definitely show significant progress with that funding.",
-        emotion: "grateful",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "With $7 million, we can hire the engineers we need to implement the full system.",
-        emotion: "calculating",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Jackson",
         text: "Perfect. I like partners who can admit when they're not quite there yet. Shows integrity.",
-        emotion: "approving",
+        emotion: "neutral",
         speakerPosition: "center"
       }
     ],
@@ -2632,7 +2700,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "To Nexus AI and our Series A! $15 million to revolutionize personalization!",
-        emotion: "jubilant",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
@@ -2643,7 +2711,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Wei, I want to particularly thank you. Your technical brilliance made this possible, even if we had to... streamline some things for the demo.",
-        emotion: "grateful",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
@@ -2661,7 +2729,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "This is just the beginning. Silicon Valley rewards the bold.",
-        emotion: "ambitious",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
@@ -2687,14 +2755,14 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "We need to talk about our runway. Without new funding, we have about two months left.",
-        emotion: "concerned",
+        emotion: "serious",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "I know. I've been calling every investor contact I have. Word about the Sequoia rejection has spread.",
-        emotion: "defeated",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
@@ -2712,14 +2780,14 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "We still have options. We could try for an acqui-hire with one of the big tech companies.",
-        emotion: "desperate",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "Is that what this was all about? Building something just to sell it off?",
-        emotion: "disappointed",
+        emotion: "frustrated",
         speakerPosition: "left"
       },
       {
@@ -2749,14 +2817,14 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Wei, how's progress on the implementation? Jackson wants a monthly update.",
-        emotion: "focused",
+        emotion: "thoughtful",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "We're on track. The new team is solid, and we've solved the core scaling issues. It's not just smoke and mirrors anymore.",
-        emotion: "satisfied",
+        emotion: "happy",
         speakerPosition: "left"
       },
       {
@@ -2767,14 +2835,14 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Your honesty saved us that day. I was ready to bluff our way through.",
-        emotion: "grateful",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "Sometimes the best move is just telling the truth. We've got a real shot at building something meaningful now.",
-        emotion: "optimistic",
+        emotion: "happy",
         speakerPosition: "left"
       },
       {
@@ -2816,14 +2884,14 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "The optimization is working. Load times are down 40% and the recommendations are more accurate.",
-        emotion: "impressed",
+        emotion: "happy",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "This is incredible work, everyone. Sequoia is going to be blown away.",
-        emotion: "proud",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
@@ -2849,14 +2917,14 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "I've hard-coded the responses for the demo scenarios. It'll look impressive, as long as they don't go off-script.",
-        emotion: "uneasy",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "Perfect. I'll make sure Jackson sticks to our planned examples.",
-        emotion: "calculating",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
@@ -2886,14 +2954,14 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "We need to prioritize. What's the absolute minimum we need to show to impress Jackson?",
-        emotion: "focused",
+        emotion: "thoughtful",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "The core recommendation engine, the user interface, and at least one impressive use case.",
-        emotion: "decisive",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
@@ -2923,14 +2991,14 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "What if we emphasize this feature? It really showcases how our approach differs from competitors.",
-        emotion: "excited",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "Good idea. I can optimize this section to make it run even smoother.",
-        emotion: "collaborative",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
@@ -2960,14 +3028,14 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "The pitch deck is coming together beautifully. I've emphasized our unique approach to personalization.",
-        emotion: "satisfied",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "The algorithm is stable now. It won't scale beyond a million users yet, but it will handle the demo perfectly.",
-        emotion: "professional",
+        emotion: "confident",
         speakerPosition: "left"
       },
       {
@@ -2997,14 +3065,14 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "These external developers are actually pretty good. The UI is looking much better.",
-        emotion: "surprised",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "I told you I'd find the best. They're expensive, but worth it for this demo.",
-        emotion: "pleased",
+        emotion: "happy",
         speakerPosition: "right"
       },
       {
@@ -3034,14 +3102,14 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "I've listed all the technical modifications needed. We'll need the entire team working overtime.",
-        emotion: "cold",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "Make it happen. Whatever resources you need, just ask.",
-        emotion: "demanding",
+        emotion: "frustrated",
         speakerPosition: "right"
       },
       {
@@ -3071,14 +3139,14 @@ export const scenes = {
         type: "character",
         speaker: "Wei",
         text: "If we focus just on these core features, we can make them rock solid in a week.",
-        emotion: "strategic",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
         type: "character",
         speaker: "Kevin",
         text: "Perfect. Quality over quantity. Let's make these few features absolutely flawless.",
-        emotion: "approving",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
@@ -3108,14 +3176,14 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "I've optimized the front-end response time. It's 30% faster now.",
-        emotion: "focused",
+        emotion: "thoughtful",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "Impressive. You haven't lost your touch. I've restructured the algorithm to handle the demo scenarios more efficiently.",
-        emotion: "impressed",
+        emotion: "happy",
         speakerPosition: "left"
       },
       {
@@ -3145,14 +3213,14 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "Let's make sure the demo showcases both the technology and its business potential.",
-        emotion: "collaborative",
+        emotion: "neutral",
         speakerPosition: "right"
       },
       {
         type: "character",
         speaker: "Wei",
         text: "I can implement some temporary optimizations that will work for the demo, while highlighting where we plan to improve later.",
-        emotion: "pragmatic",
+        emotion: "neutral",
         speakerPosition: "left"
       },
       {
@@ -3163,7 +3231,7 @@ export const scenes = {
         type: "character",
         speaker: "Kevin",
         text: "This is good. We're showing Jackson something real, but also communicating our vision for the future.",
-        emotion: "satisfied",
+        emotion: "happy",
         speakerPosition: "right"
       }
     ],
@@ -3188,5 +3256,43 @@ export const scenes = {
       }
     ],
     defaultNext: "ep1_intro" // Loops back to start for now
+  },
+
+  "ep1_scene9_breaking_news": {
+    id: "ep1_scene9_breaking_news",
+    episodeId: "ep1",
+    title: "Breaking News",
+    location: "Outside Nexus AI Building",
+    background: "/assets/backgrounds/office-exterior.jpg",
+    narrative: [
+      {
+        type: "narration",
+        text: "As the meeting happens inside, a news alert flashes on a phone belonging to a Pinnacle analyst waiting outside:"
+      },
+      {
+        type: "narration",
+        text: '"BREAKING: OpenMind AI accelerates launch of quantum model. CEO announces release in TWO WEEKS, ahead of schedule."'
+      }
+    ],
+    defaultNext: "coming_soon"
+  },
+
+  "ep1_scene10_episode_end": {
+    id: "ep1_scene10_episode_end",
+    episodeId: "ep1",
+    title: "Episode End",
+    location: "Nexus AI Headquarters",
+    background: "/assets/backgrounds/nexus-office-interior.jpg",
+    narrative: [
+      {
+        type: "narration",
+        text: 'End of Episode 1: "Silicon Dreams"'
+      },
+      {
+        type: "narration",
+        text: "Your decisions have shaped the beginning of this story. The consequences will unfold in future episodes..."
+      }
+    ],
+    defaultNext: "coming_soon"
   }
 }; 

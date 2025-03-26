@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import SceneVisualizer from './SceneVisualizer';
+import StoryGraphVisualizer from './StoryGraphVisualizer';
 import { scenes } from '../data/scenes';
 
 const StoryDebugScreen = ({ 
@@ -55,30 +56,74 @@ const StoryDebugScreen = ({
           >
             Debug Tools
           </TabButton>
+          <TabButton 
+            $active={activeTab === 'graph'} 
+            onClick={() => setActiveTab('graph')}
+          >
+            Story Graph
+          </TabButton>
         </TabContainer>
         
         <TabContent>
           {activeTab === 'scene' && (
-            <SceneVisualizerContainer>
-              <SceneVisualizer 
-                currentSceneId={gameState.currentSceneId}
-                onSceneSelect={handleJumpToScene}
-              />
-            </SceneVisualizerContainer>
+            <SceneVisualizer 
+              scenes={scenes}
+              currentSceneId={gameState.currentSceneId}
+              onSceneClick={handleJumpToScene}
+            />
           )}
           
           {activeTab === 'state' && (
-            <StateDisplay>
+            <StateContainer>
               <StateSection>
-                <SectionTitle>Current Scene</SectionTitle>
-                <pre>{JSON.stringify(scenes[gameState.currentSceneId], null, 2)}</pre>
+                <SectionTitle>Current State</SectionTitle>
+                <InfoGrid>
+                  <InfoRow>
+                    <InfoLabel>Current Scene</InfoLabel>
+                    <InfoValue>{gameState.currentSceneId}</InfoValue>
+                  </InfoRow>
+                  <InfoRow>
+                    <InfoLabel>Selected Character</InfoLabel>
+                    <InfoValue>{gameState.selectedCharacter?.name || 'None'}</InfoValue>
+                  </InfoRow>
+                  <InfoRow>
+                    <InfoLabel>Scene Count</InfoLabel>
+                    <InfoValue>{Object.keys(scenes).length}</InfoValue>
+                  </InfoRow>
+                </InfoGrid>
               </StateSection>
               
               <StateSection>
-                <SectionTitle>Game State</SectionTitle>
-                <pre>{JSON.stringify(gameState, null, 2)}</pre>
+                <SectionTitle>Relationships</SectionTitle>
+                <InfoGrid>
+                  {Object.entries(gameState.relationships || {}).map(([charId, value]) => {
+                    const character = characters.find(c => c.id === charId);
+                    return (
+                      <InfoRow key={charId}>
+                        <InfoLabel>{character?.name || charId}</InfoLabel>
+                        <InfoValue>{value}</InfoValue>
+                      </InfoRow>
+                    );
+                  })}
+                </InfoGrid>
               </StateSection>
-            </StateDisplay>
+              
+              <StateSection>
+                <SectionTitle>Decision History</SectionTitle>
+                <InfoGrid>
+                  {Object.entries(gameState.decisions || {}).map(([sceneId, decisionId]) => {
+                    const scene = scenes[sceneId];
+                    const decision = scene?.decisions?.options.find(opt => opt.id === decisionId);
+                    return (
+                      <InfoRow key={sceneId}>
+                        <InfoLabel>{scene?.location || sceneId}</InfoLabel>
+                        <InfoValue>{decision?.text || decisionId}</InfoValue>
+                      </InfoRow>
+                    );
+                  })}
+                </InfoGrid>
+              </StateSection>
+            </StateContainer>
           )}
           
           {activeTab === 'tools' && (
@@ -115,33 +160,15 @@ const StoryDebugScreen = ({
                   </ResetButton>
                 </SceneInput>
               </ToolSection>
-              
-              <ToolSection>
-                <SectionTitle>Story Information</SectionTitle>
-                <InfoGrid>
-                  <InfoRow>
-                    <InfoLabel>Total Scenes:</InfoLabel>
-                    <InfoValue>{Object.keys(scenes).length}</InfoValue>
-                  </InfoRow>
-                  <InfoRow>
-                    <InfoLabel>Decision Paths:</InfoLabel>
-                    <InfoValue>
-                      {Object.values(scenes).reduce((count, scene) => 
-                        count + (scene.decisions?.options?.length || 0), 0
-                      )}
-                    </InfoValue>
-                  </InfoRow>
-                  <InfoRow>
-                    <InfoLabel>Narrative Lines:</InfoLabel>
-                    <InfoValue>
-                      {Object.values(scenes).reduce((count, scene) => 
-                        count + (scene.narrative?.length || 0), 0
-                      )}
-                    </InfoValue>
-                  </InfoRow>
-                </InfoGrid>
-              </ToolSection>
             </ToolsContainer>
+          )}
+
+          {activeTab === 'graph' && (
+            <StoryGraphVisualizer 
+              scenes={scenes}
+              characters={characters}
+              decisions={gameState.decisions}
+            />
           )}
         </TabContent>
       </DebugPanel>
@@ -337,6 +364,14 @@ const InfoValue = styled.div`
   font-size: 28px;
   font-weight: bold;
   margin-top: 5px;
+`;
+
+const StateContainer = styled.div`
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;
 
 export default StoryDebugScreen; 

@@ -4,6 +4,7 @@ import StartScreen from './components/StartScreen';
 import CharacterSelect from './components/CharacterSelect';
 import GameScreen from './components/GameScreen';
 import StoryDebugScreen from './components/StoryDebugScreen';
+import EndScreen from './components/EndScreen';
 import { characters } from './data/characters';
 import { scenes } from './data/scenes';
 
@@ -78,6 +79,15 @@ function App() {
     const currentScene = scenes[sceneId];
     console.log("Making decision in scene:", sceneId, "with option:", option);
     
+    // Check if this is the Coming Soon scene
+    if (currentScene.isEndScene) {
+      setGameState({
+        ...gameState,
+        screen: SCREENS.END
+      });
+      return;
+    }
+    
     // Determine the next scene
     let nextSceneId;
     
@@ -91,8 +101,8 @@ function App() {
       // Use the default next scene
       nextSceneId = currentScene.defaultNext;
     } else {
-      console.error("No next scene defined for:", sceneId);
-      return; // Don't update if we can't determine next scene
+      // If no next scene is defined, go to Coming Soon
+      nextSceneId = "coming_soon";
     }
     
     // Update relationships based on the decision
@@ -192,7 +202,7 @@ function App() {
           decisions={gameState.decisions}
         />;
       case SCREENS.END:
-        return <div>End Screen - To be implemented</div>;
+        return <EndScreen onRestart={startGame} />;
       default:
         return <div>Loading...</div>;
     }

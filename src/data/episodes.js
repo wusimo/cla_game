@@ -985,7 +985,7 @@ export const episodes = [
             text: '"BREAKING: OpenMind AI accelerates launch of quantum model. CEO announces release in TWO WEEKS, ahead of schedule."'
           }
         ],
-        decisions: null
+        defaultNext: 'coming_soon'
       },
       
       {
@@ -999,10 +999,10 @@ export const episodes = [
           },
           {
             type: 'narration',
-            text: 'Your decisions have shaped the beginning of this story. The consequences will unfold in Episode 2: "Quantum Leap"'
+            text: 'Your decisions have shaped the beginning of this story. The consequences will unfold in future episodes...'
           }
         ],
-        decisions: null
+        defaultNext: 'coming_soon'
       },
 
       {
