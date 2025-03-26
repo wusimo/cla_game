@@ -41,12 +41,13 @@ function App() {
     const handleKeyDown = (e) => {
       if (e.key === 'D' && e.ctrlKey && e.shiftKey) {
         setShowDebugTools(prev => !prev);
+        console.log("Debug tools:", !showDebugTools);
       }
     };
     
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [showDebugTools]);
 
   const startGame = () => {
     setGameState({
@@ -215,8 +216,8 @@ function App() {
       
       {/* Debug button in corner */}
       <DebugButton 
-        onClick={() => setShowDebugTools(true)}
-        title="Open Story Debug Tools (Ctrl+Shift+D)"
+        onClick={() => setShowDebugTools(prev => !prev)}
+        title="Toggle Debug Tools (Ctrl+Shift+D)"
       >
         🛠️
       </DebugButton>

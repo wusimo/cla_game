@@ -16,7 +16,7 @@ const GameScreen = ({
   const [showDecisions, setShowDecisions] = useState(false);
   const [narrativeIndex, setNarrativeIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(false);
-  // Debug mode is off by default - press Ctrl+D to enable
+  // Debug mode is off by default - press Ctrl+Shift+D to enable
   const [debugMode, setDebugMode] = useState(false);
   // Audio muting state
   const [audioMuted, setAudioMuted] = useState(false);
@@ -122,7 +122,7 @@ const GameScreen = ({
       }
       
       // Press 'D' to toggle debug mode
-      if (e.key === 'd' && e.ctrlKey) {
+      if (e.key === 'D' && e.ctrlKey && e.shiftKey) {
         setDebugMode(prev => !prev);
         console.log("Debug mode:", !debugMode);
       }
@@ -292,7 +292,7 @@ const GameScreen = ({
       
       <KeyboardHelp>
         Press <KeyboardKey>Space</KeyboardKey> or <KeyboardKey>→</KeyboardKey> to advance | 
-        <KeyboardKey>Ctrl</KeyboardKey>+<KeyboardKey>D</KeyboardKey> for debug | 
+        <KeyboardKey>Ctrl</KeyboardKey>+<KeyboardKey>Shift</KeyboardKey>+<KeyboardKey>D</KeyboardKey> for debug | 
         <KeyboardKey>Ctrl</KeyboardKey>+<KeyboardKey>N</KeyboardKey> force next scene
       </KeyboardHelp>
     </GameScreenContainer>
