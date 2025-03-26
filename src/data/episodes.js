@@ -625,6 +625,307 @@ export const episodes = [
       },
       
       {
+        id: 'ep1_scene7_family_dinner',
+        character: 'wei',
+        location: 'Melissa\'s Parents\' Home',
+        background: '/assets/backgrounds/family-dinner.jpg',
+        narrative: [
+          {
+            type: 'narration',
+            text: 'The Zhang family home is warm and inviting, filled with the aroma of traditional Chinese dishes. Melissa\'s father, a retired professor, sits at the head of the table.'
+          },
+          {
+            type: 'character',
+            speaker: 'Melissa',
+            text: 'I\'m glad you came. Dad was worried you\'d miss it again.',
+            emotion: 'relieved'
+          },
+          {
+            type: 'character',
+            speaker: 'Melissa\'s Father',
+            text: 'How is the startup going? Still working on that AI thing?'
+          },
+          {
+            type: 'character',
+            speaker: 'Wei',
+            text: 'Yes, we have a big meeting tomorrow with Pinnacle Capital.'
+          },
+          {
+            type: 'character',
+            speaker: 'Melissa',
+            text: 'Wei has been working really hard. But I\'m proud of him.',
+            emotion: 'supportive'
+          },
+          {
+            type: 'character',
+            speaker: 'Melissa\'s Mother',
+            text: 'And how is your job at Google, Melissa?'
+          },
+          {
+            type: 'character',
+            speaker: 'Melissa',
+            text: 'It\'s going well. I\'m up for a promotion next month.',
+            emotion: 'proud'
+          }
+        ],
+        decisions: {
+          prompt: 'How does Wei handle the family dinner?',
+          quote: '"Family is not an important thing. It\'s everything." - Michael J. Fox',
+          options: [
+            {
+              id: 'engageFamily',
+              text: 'Engage fully with the family',
+              preview: 'Put aside work concerns and focus on family',
+              relationshipEffects: {
+                melissa: 15
+              },
+              nextScene: 'ep1_scene8_acquisition_meeting'
+            },
+            {
+              id: 'checkWork',
+              text: 'Check work messages discreetly',
+              preview: 'Stay connected while being present',
+              relationshipEffects: {
+                melissa: -5
+              },
+              nextScene: 'ep1_scene8_acquisition_meeting'
+            },
+            {
+              id: 'discussFuture',
+              text: 'Discuss future plans with Melissa\'s parents',
+              preview: 'Share your vision while respecting family time',
+              relationshipEffects: {
+                melissa: 5
+              },
+              nextScene: 'ep1_scene8_acquisition_meeting'
+            }
+          ]
+        }
+      },
+
+      {
+        id: 'ep1_scene7_sophia_office',
+        character: 'kevin',
+        location: 'Sophia\'s VC Office',
+        background: '/assets/backgrounds/vc-office.jpg',
+        narrative: [
+          {
+            type: 'narration',
+            text: 'Sophia\'s corner office at her venture capital firm overlooks Sand Hill Road. She\'s reviewing a pitch deck when Kevin arrives.'
+          },
+          {
+            type: 'character',
+            speaker: 'Sophia',
+            text: 'You\'re early. I thought you\'d be preparing for tomorrow.',
+            emotion: 'surprised'
+          },
+          {
+            type: 'character',
+            speaker: 'Kevin',
+            text: 'I wanted to talk about the house situation.'
+          },
+          {
+            type: 'character',
+            speaker: 'Sophia',
+            text: 'I\'ve already spoken with the realtor. They\'re willing to hold it for 48 hours if we put down a deposit.',
+            emotion: 'determined'
+          },
+          {
+            type: 'character',
+            speaker: 'Kevin',
+            text: 'Sophia, we need to be careful with our finances right now.'
+          },
+          {
+            type: 'character',
+            speaker: 'Sophia',
+            text: 'This is exactly the right time. The market is perfect, and this house is underpriced.',
+            emotion: 'insistent'
+          }
+        ],
+        decisions: {
+          prompt: 'How does Kevin handle Sophia\'s persistence?',
+          quote: '"The best investment is in yourself." - Warren Buffett',
+          options: [
+            {
+              id: 'agreeSophia',
+              text: 'Agree to the deposit',
+              preview: 'Trust Sophia\'s judgment on the real estate market',
+              relationshipEffects: {
+                sophia: 15
+              },
+              nextScene: 'ep1_scene8_acquisition_meeting'
+            },
+            {
+              id: 'resistSophia',
+              text: 'Firmly resist the purchase',
+              preview: 'Stand your ground on financial prudence',
+              relationshipEffects: {
+                sophia: -10
+              },
+              nextScene: 'ep1_scene8_acquisition_meeting'
+            },
+            {
+              id: 'compromiseSophia',
+              text: 'Suggest a smaller property',
+              preview: 'Find middle ground between ambition and caution',
+              relationshipEffects: {
+                sophia: -3
+              },
+              nextScene: 'ep1_scene8_acquisition_meeting'
+            }
+          ]
+        }
+      },
+
+      {
+        id: 'ep1_scene8_melissa_google',
+        character: 'wei',
+        location: 'Google Campus',
+        background: '/assets/backgrounds/google-campus.jpg',
+        narrative: [
+          {
+            type: 'narration',
+            text: 'Wei meets Melissa at Google\'s campus for lunch. She\'s just come from a meeting about her promotion.'
+          },
+          {
+            type: 'character',
+            speaker: 'Melissa',
+            text: 'They offered me the position. Senior Product Manager.',
+            emotion: 'excited'
+          },
+          {
+            type: 'character',
+            speaker: 'Wei',
+            text: 'That\'s amazing! Congratulations!'
+          },
+          {
+            type: 'character',
+            speaker: 'Melissa',
+            text: 'But it means more responsibility, longer hours...',
+            emotion: 'concerned'
+          },
+          {
+            type: 'character',
+            speaker: 'Wei',
+            text: 'We\'ll figure it out. After the acquisition...'
+          },
+          {
+            type: 'character',
+            speaker: 'Melissa',
+            text: 'Wei, we need to talk about our future. This can\'t go on forever.',
+            emotion: 'serious'
+          }
+        ],
+        decisions: {
+          prompt: 'How does Wei respond to Melissa\'s concerns?',
+          quote: '"The only way to do great work is to love what you do." - Steve Jobs',
+          options: [
+            {
+              id: 'supportMelissa',
+              text: 'Support her career fully',
+              preview: 'Commit to better work-life balance',
+              relationshipEffects: {
+                melissa: 15
+              },
+              nextScene: 'ep1_scene9_acquisition_result'
+            },
+            {
+              id: 'delayDiscussion',
+              text: 'Ask to discuss after the acquisition',
+              preview: 'Focus on the immediate opportunity',
+              relationshipEffects: {
+                melissa: -5
+              },
+              nextScene: 'ep1_scene9_acquisition_result'
+            },
+            {
+              id: 'compromiseMelissa',
+              text: 'Propose a timeline for change',
+              preview: 'Acknowledge the issue and plan for improvement',
+              relationshipEffects: {
+                melissa: 5
+              },
+              nextScene: 'ep1_scene9_acquisition_result'
+            }
+          ]
+        }
+      },
+
+      {
+        id: 'ep1_scene8_sophia_social',
+        character: 'kevin',
+        location: 'Silicon Valley Country Club',
+        background: '/assets/backgrounds/country-club.jpg',
+        narrative: [
+          {
+            type: 'narration',
+            text: 'Sophia hosts a pre-meeting gathering at the country club. The Valley\'s elite are in attendance.'
+          },
+          {
+            type: 'character',
+            speaker: 'Sophia',
+            text: 'Everyone is talking about the Pinnacle deal. This could be huge for us.',
+            emotion: 'excited'
+          },
+          {
+            type: 'character',
+            speaker: 'Kevin',
+            text: 'We should keep this quiet until tomorrow.'
+          },
+          {
+            type: 'character',
+            speaker: 'Sophia',
+            text: 'Too late. I may have mentioned it to a few key people.',
+            emotion: 'confident'
+          },
+          {
+            type: 'character',
+            speaker: 'Kevin',
+            text: 'Sophia, what if the deal doesn\'t happen?'
+          },
+          {
+            type: 'character',
+            speaker: 'Sophia',
+            text: 'It will happen. I\'ve already started planning our next steps.',
+            emotion: 'determined'
+          }
+        ],
+        decisions: {
+          prompt: 'How does Kevin handle Sophia\'s social maneuvering?',
+          quote: '"Success is not final, failure is not fatal: it is the courage to continue that counts." - Winston Churchill',
+          options: [
+            {
+              id: 'trustSophia',
+              text: 'Trust her judgment',
+              preview: 'Support her social strategy',
+              relationshipEffects: {
+                sophia: 15
+              },
+              nextScene: 'ep1_scene9_acquisition_result'
+            },
+            {
+              id: 'cautionSophia',
+              text: 'Express concern about the risks',
+              preview: 'Urge more caution in social dealings',
+              relationshipEffects: {
+                sophia: -5
+              },
+              nextScene: 'ep1_scene9_acquisition_result'
+            },
+            {
+              id: 'compromiseSophia',
+              text: 'Suggest more controlled messaging',
+              preview: 'Find balance between ambition and prudence',
+              relationshipEffects: {
+                sophia: 0
+              },
+              nextScene: 'ep1_scene9_acquisition_result'
+            }
+          ]
+        }
+      },
+      
+      {
         id: 'ep1_scene8_acquisition_meeting',
         location: 'Nexus AI Headquarters - Conference Room',
         background: '/assets/backgrounds/conference-room-meeting.jpg',
@@ -702,6 +1003,228 @@ export const episodes = [
           }
         ],
         decisions: null
+      },
+
+      {
+        id: 'ep1_scene5_sophia_network',
+        character: 'kevin',
+        location: 'Palo Alto Coffee Shop',
+        background: '/assets/backgrounds/coffee-shop.jpg',
+        narrative: [
+          {
+            type: 'narration',
+            text: 'Sophia meets with her network of venture capitalists at a trendy Palo Alto coffee shop. The conversation turns to Nexus AI.'
+          },
+          {
+            type: 'character',
+            speaker: 'Sophia',
+            text: 'The technology is impressive, but the team needs more polish.',
+            emotion: 'professional'
+          },
+          {
+            type: 'character',
+            speaker: 'VC Partner',
+            text: 'We\'ve heard rumors about Pinnacle\'s interest.'
+          },
+          {
+            type: 'character',
+            speaker: 'Sophia',
+            text: 'Yes, but there might be other opportunities. I\'m thinking about introducing them to some of my contacts.',
+            emotion: 'strategic'
+          },
+          {
+            type: 'character',
+            speaker: 'VC Partner',
+            text: 'Isn\'t that a conflict of interest?'
+          },
+          {
+            type: 'character',
+            speaker: 'Sophia',
+            text: 'In Silicon Valley, it\'s all about who you know. I\'m just facilitating connections.',
+            emotion: 'confident'
+          }
+        ],
+        decisions: {
+          prompt: 'How does Kevin handle Sophia\'s networking?',
+          quote: '"Your network is your net worth." - Porter Gale',
+          options: [
+            {
+              id: 'supportNetwork',
+              text: 'Support her networking efforts',
+              preview: 'Trust her judgment in building connections',
+              relationshipEffects: {
+                sophia: 10
+              },
+              nextScene: 'ep1_scene6_kevin_tesla'
+            },
+            {
+              id: 'cautionNetwork',
+              text: 'Express concern about conflicts',
+              preview: 'Warn about potential ethical issues',
+              relationshipEffects: {
+                sophia: -5
+              },
+              nextScene: 'ep1_scene6_kevin_tesla'
+            },
+            {
+              id: 'compromiseNetwork',
+              text: 'Suggest more transparent approach',
+              preview: 'Find middle ground between networking and ethics',
+              relationshipEffects: {
+                sophia: 0
+              },
+              nextScene: 'ep1_scene6_kevin_tesla'
+            }
+          ]
+        }
+      },
+
+      {
+        id: 'ep1_scene7_sophia_career',
+        character: 'kevin',
+        location: 'Sophia\'s VC Office',
+        background: '/assets/backgrounds/vc-office.jpg',
+        narrative: [
+          {
+            type: 'narration',
+            text: 'Sophia is preparing for a partner meeting at her VC firm. Her office is filled with pitch decks and market analysis.'
+          },
+          {
+            type: 'character',
+            speaker: 'Sophia',
+            text: 'I\'m up for partner this year. This deal could be my ticket.',
+            emotion: 'determined'
+          },
+          {
+            type: 'character',
+            speaker: 'Kevin',
+            text: 'You\'re already doing great work.'
+          },
+          {
+            type: 'character',
+            speaker: 'Sophia',
+            text: 'But I need something big. Something that proves I belong at the top.',
+            emotion: 'ambitious'
+          },
+          {
+            type: 'character',
+            speaker: 'Kevin',
+            text: 'What about the house? We can wait if you need to focus on this.'
+          },
+          {
+            type: 'character',
+            speaker: 'Sophia',
+            text: 'No, we need both. I can handle it. I always do.',
+            emotion: 'confident'
+          }
+        ],
+        decisions: {
+          prompt: 'How does Kevin support Sophia\'s career?',
+          quote: '"The only way to do great work is to love what you do." - Steve Jobs',
+          options: [
+            {
+              id: 'supportCareer',
+              text: 'Fully support her career goals',
+              preview: 'Put her career advancement first',
+              relationshipEffects: {
+                sophia: 15
+              },
+              nextScene: 'ep1_scene8_sophia_social'
+            },
+            {
+              id: 'balanceCareer',
+              text: 'Suggest finding balance',
+              preview: 'Encourage work-life balance',
+              relationshipEffects: {
+                sophia: -5
+              },
+              nextScene: 'ep1_scene8_sophia_social'
+            },
+            {
+              id: 'compromiseCareer',
+              text: 'Propose timeline for both goals',
+              preview: 'Plan for both career and personal life',
+              relationshipEffects: {
+                sophia: 5
+              },
+              nextScene: 'ep1_scene8_sophia_social'
+            }
+          ]
+        }
+      },
+
+      {
+        id: 'ep1_scene9_sophia_result',
+        character: 'kevin',
+        location: 'Sophia\'s VC Office',
+        background: '/assets/backgrounds/vc-office.jpg',
+        narrative: [
+          {
+            type: 'narration',
+            text: 'After the acquisition meeting, Sophia receives news about her partner candidacy.'
+          },
+          {
+            type: 'character',
+            speaker: 'Sophia',
+            text: 'They want me to lead the AI investment team.',
+            emotion: 'excited'
+          },
+          {
+            type: 'character',
+            speaker: 'Kevin',
+            text: 'That\'s amazing! When did they tell you?'
+          },
+          {
+            type: 'character',
+            speaker: 'Sophia',
+            text: 'Just now. They said my work on the Nexus deal was impressive.',
+            emotion: 'proud'
+          },
+          {
+            type: 'character',
+            speaker: 'Kevin',
+            text: 'So the house...'
+          },
+          {
+            type: 'character',
+            speaker: 'Sophia',
+            text: 'We can afford it now. Both of our careers are taking off.',
+            emotion: 'determined'
+          }
+        ],
+        decisions: {
+          prompt: 'How does Kevin respond to Sophia\'s success?',
+          quote: '"Success is not final, failure is not fatal: it is the courage to continue that counts." - Winston Churchill',
+          options: [
+            {
+              id: 'celebrateSuccess',
+              text: 'Celebrate her achievement',
+              preview: 'Share in her success and plan the future',
+              relationshipEffects: {
+                sophia: 15
+              },
+              nextScene: 'ep1_scene10_ending'
+            },
+            {
+              id: 'cautionSuccess',
+              text: 'Express concern about pressure',
+              preview: 'Warn about the challenges ahead',
+              relationshipEffects: {
+                sophia: -5
+              },
+              nextScene: 'ep1_scene10_ending'
+            },
+            {
+              id: 'balanceSuccess',
+              text: 'Discuss work-life balance',
+              preview: 'Plan for maintaining balance with success',
+              relationshipEffects: {
+                sophia: 5
+              },
+              nextScene: 'ep1_scene10_ending'
+            }
+          ]
+        }
       }
     ]
   }

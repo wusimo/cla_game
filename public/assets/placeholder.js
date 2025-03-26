@@ -83,9 +83,13 @@ window.addEventListener('load', () => {
     { id: 'modest-office-building', name: 'Office Building\nExterior', color: '#185ABC' },
     { id: 'nexus-office-interior', name: 'Nexus AI Office', color: '#174EA6' },
     { id: 'conference-room', name: 'Conference Room', color: '#103D8F' },
-    { id: 'tesla-interior', name: 'Tesla Interior', color: '#0B2E68' },
+    { id: 'tesla-interior', name: 'Tesla Interior', color: '#1A1A1A' },
     { id: 'wei-apartment', name: 'Wei\'s Apartment', color: '#071F4A' },
-    { id: 'conference-room-meeting', name: 'Meeting Room', color: '#051235' },
+    { id: 'vc-office', name: 'VC Office', color: '#1B3C87' },
+    { id: 'google-campus', name: 'Google Campus', color: '#4285F4' },
+    { id: 'country-club', name: 'Country Club', color: '#2C5530' },
+    { id: 'family-dinner', name: 'Family Dinner', color: '#8B4513' },
+    { id: 'conference-room-meeting', name: 'Conference Room Meeting', color: '#2C3E50' },
     { id: 'office-exterior', name: 'Office Exterior', color: '#030924' },
     { id: 'nexus-office-night', name: 'Office at Night', color: '#010714' }
   ];

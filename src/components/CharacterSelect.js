@@ -2,18 +2,20 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const CharacterSelect = ({ characters, onSelect }) => {
+  // Filter out hidden characters
+  const availableCharacters = characters.filter(char => !char.hidden);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const selectedCharacter = characters[selectedIndex];
+  const selectedCharacter = availableCharacters[selectedIndex];
 
   const handlePrevious = () => {
     setSelectedIndex((prevIndex) => 
-      prevIndex === 0 ? characters.length - 1 : prevIndex - 1
+      prevIndex === 0 ? availableCharacters.length - 1 : prevIndex - 1
     );
   };
 
   const handleNext = () => {
     setSelectedIndex((prevIndex) => 
-      prevIndex === characters.length - 1 ? 0 : prevIndex + 1
+      prevIndex === availableCharacters.length - 1 ? 0 : prevIndex + 1
     );
   };
 
@@ -50,7 +52,7 @@ const CharacterSelect = ({ characters, onSelect }) => {
       </CharacterCarousel>
       
       <CharacterIndicators>
-        {characters.map((_, index) => (
+        {availableCharacters.map((_, index) => (
           <CharacterIndicator 
             key={index} 
             $active={index === selectedIndex}

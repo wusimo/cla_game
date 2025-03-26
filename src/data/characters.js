@@ -55,7 +55,8 @@ export const characters = [
       kevin: 85,
       wei: 50,
     },
-    personalStoryline: 'Behind her picture-perfect life, Sophia must decide how far she is willing to go to maintain status and security in Silicon Valley\'s social hierarchy.'
+    personalStoryline: 'Behind her picture-perfect life, Sophia must decide how far she is willing to go to maintain status and security in Silicon Valley\'s social hierarchy.',
+    hidden: true
   },
   {
     id: 'melissa',
@@ -74,6 +75,7 @@ export const characters = [
       wei: 75,
       kevin: 40,
     },
-    personalStoryline: 'Melissa must decide how long to support Wei\'s dream while balancing her own career aspirations and their family needs.'
+    personalStoryline: 'Melissa must decide how long to support Wei\'s dream while balancing her own career aspirations and their family needs.',
+    hidden: true
   }
 ]; 
